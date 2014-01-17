@@ -1,0 +1,633 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@charset "UTF-8";
+/*YUI 3.10.3 (build 2fb5187)
+ *Copyright 2013 Yahoo! Inc. All rights reserved.
+ *Licensed under the BSD License.
+ *http://yuilibrary.com/license/ */
+/* base.css, part of YUI's CSS Foundation */
+/* setting a consistent width, 160px;
+ * control of type=file still not possible */
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssbase-context {
+  display: none; }
+
+body {
+  margin: 0;
+  padding: 20px 10%;
+  color: #333333;
+  background-color: #fafafa;
+  font-size: 14px;
+  font-family: "Helvetica Neue"; }
+
+h1 {
+  margin: 20px 0 30px 0;
+  font-weight: 600;
+  font-size: 30px; }
+
+h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px 0; }
+
+em {
+  font-style: italic; }
+
+pre {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  line-height: 1.6em; }
+
+.file_picker {
+  display: none; }
+
+.input .CodeMirror {
+  height: auto;
+  border: 1px solid #d0e0eb;
+  background: white;
+  padding: 8px 12px;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  line-height: 1.6em; }
+  .input .CodeMirror .CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto; }
+  .input .CodeMirror span.error {
+    border-bottom: 2px dotted #ffaaaa; }
+  .input .CodeMirror .CodeMirror-lines {
+    padding: 0; }
+  .input .CodeMirror .CodeMirror-gutters {
+    border: none;
+    background: transparent; }
+    .input .CodeMirror .CodeMirror-gutters .error {
+      width: 4px; }
+  .input .CodeMirror .errorMarker {
+    position: relative;
+    margin-top: 0.3em;
+    width: 4px;
+    height: 1em;
+    background-color: #ffaaaa; }
+    .input .CodeMirror .errorMarker pre {
+      padding: 0; }
+
+#document .cell {
+  margin-bottom: 20px;
+  position: relative; }
+#document .input[data-cell-number]::before, #document .output[data-cell-number]::before {
+  position: absolute;
+  right: 100%;
+  padding: 8px 12px;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  line-height: 1.6em;
+  color: #dddddd; }
+#document .input .permalink {
+  position: absolute;
+  left: calc(100% + 1em);
+  color: #dddddd;
+  text-decoration: underline;
+  cursor: pointer; }
+#document .output {
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 1.4em;
+  min-height: 1em; }
+  #document .output .close::before {
+    content: "×";
+    position: absolute;
+    right: 10px;
+    font-weight: bold;
+    color: #dddddd; }
+  #document .output .user-html h1 {
+    /*18px via YUI Fonts CSS foundation */
+    font-size: 138.5%; }
+  #document .output .user-html h2 {
+    /*16px via YUI Fonts CSS foundation */
+    font-size: 123.1%; }
+  #document .output .user-html h3 {
+    /*14px via YUI Fonts CSS foundation */
+    font-size: 108%; }
+  #document .output .user-html h1, #document .output .user-html h2, #document .output .user-html h3 {
+    /* top & bottom margin based on font size */
+    margin: 1em 0; }
+  #document .output .user-html h1, #document .output .user-html h2, #document .output .user-html h3, #document .output .user-html h4, #document .output .user-html h5, #document .output .user-html h6, #document .output .user-html strong {
+    /*bringing boldness back to headers and the strong element */
+    font-weight: bold; }
+  #document .output .user-html abbr, #document .output .user-html acronym {
+    /*indicating to users that more info is available */
+    border-bottom: 1px dotted black;
+    cursor: help; }
+  #document .output .user-html em {
+    /*bringing italics back to the em element */
+    font-style: italic; }
+  #document .output .user-html blockquote, #document .output .user-html ul, #document .output .user-html ol, #document .output .user-html dl {
+    /*giving blockquotes and lists room to breath */
+    margin: 1em; }
+  #document .output .user-html ol, #document .output .user-html ul, #document .output .user-html dl {
+    /*bringing lists on to the page with breathing room */
+    margin-left: 2em; }
+  #document .output .user-html ol {
+    /*giving OL's LIs generated numbers */
+    list-style: decimal outside; }
+  #document .output .user-html ul {
+    /*giving UL's LIs generated disc markers */
+    list-style: disc outside; }
+  #document .output .user-html dl dd {
+    /*providing spacing for definition terms */
+    margin-left: 1em; }
+  #document .output .user-html th, #document .output .user-html td {
+    /*borders and padding to make the table readable */
+    border: 1px solid black;
+    padding: 0.5em; }
+  #document .output .user-html th {
+    /*distinguishing table headers from data cells */
+    font-weight: bold;
+    text-align: center; }
+  #document .output .user-html caption {
+    /*coordinated margin to match cell's padding */
+    margin-bottom: 0.5em;
+    /*centered so it doesn't blend in to other content */
+    text-align: center; }
+  #document .output .user-html p, #document .output .user-html fieldset, #document .output .user-html table, #document .output .user-html pre {
+    /*so things don't run into each other */
+    margin-bottom: 1em; }
+  #document .output .user-html input[type=text], #document .output .user-html input[type=password] {
+    width: 12.25em;
+    *width: 11.9em; }
+  #document .output .user-html textarea {
+    width: 12.25em;
+    *width: 11.9em; }
+  #document .output .promise-status {
+    padding: 2px 8px;
+    margin: 3px 0 10px 0;
+    -webkit-border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    background-color: #eeeeee;
+    border-bottom: 1px solid #dddddd;
+    font-size: 0.8em;
+    color: #bbbbbb; }
+  #document .output .cm-comment {
+    color: #aaaaaa; }
+  #document .output p {
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    line-height: 1.7em; }
+  #document .output .example {
+    margin: 10px 6px;
+    border: 1px solid #d0d0d0;
+    padding: 6px;
+    cursor: pointer; }
+  #document .output .error {
+    border: 1px solid #ffaaaa;
+    background-color: #ffeeee;
+    padding: 5px;
+    -webkit-border-radius: 4px;
+    margin-bottom: 0.5em; }
+  #document .output .legend {
+    font: 12px Monaco, Consolas, "Lucida Console", monospace; }
+    #document .output .legend .color::before {
+      content: "■ "; }
+    #document .output .legend li {
+      margin: 6px; }
+      #document .output .legend li.hovered {
+        background-color: #dddddd; }
+      #document .output .legend li.deselected {
+        opacity: 0.5; }
+  #document .output table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1.5em; }
+    #document .output table td, #document .output table th {
+      background: white;
+      border: 1px solid #d0d0d0;
+      padding: 8px 14px;
+      font-size: 14px; }
+      #document .output table td.number, #document .output table th.number {
+        text-align: right; }
+  #document .output img, #document .output svg {
+    background-color: white;
+    padding: 3px;
+    -webkit-border-radius: 6px; }
+  #document .output dl a {
+    display: none; }
+  #document .output dl dt {
+    margin: 0.5em;
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    font-weight: bold; }
+  #document .output dl dd {
+    margin-left: 2em;
+    font-family: helvetica, arial, sans-serif; }
+    #document .output dl dd p, #document .output dl dd pre {
+      margin: 0.5em 0; }
+
+.find-results {
+  padding-left: 10px; }
+  .find-results li {
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    cursor: pointer;
+    margin: 6px 0; }
+    .find-results li:hover {
+      text-decoration: underline; }
+    .find-results li .light {
+      color: #cccccc; }
+
+.gist-link {
+  overflow: auto;
+  font-size: 13px; }
+  .gist-link .datetime {
+    display: block; }
+  .gist-link img {
+    float: left;
+    width: 30px;
+    height: 30px; }
+
+.cm-s-idle span.cm-comment {
+  color: #919191; }
+.cm-s-idle span.cm-keyword {
+  color: #ff5600; }
+.cm-s-idle span.cm-string {
+  color: #00a33f; }
+.cm-s-idle span.cm-builtin {
+  font-weight: bold;
+  color: #007777; }
+.cm-s-idle span.cm-special {
+  font-weight: bold;
+  color: #00aaaa; }
+.cm-s-idle span.cm-reserved {
+  font-weight: bold;
+  background: #ee2222;
+  color: white; }
+.cm-s-idle span.cm-variable {
+  color: black; }
+.cm-s-idle span.cm-atom {
+  color: #a535ae; }
+.cm-s-idle span.cm-number {
+  color: black; }
+.cm-s-idle span.cm-meta {
+  color: #555555; }
+.cm-s-idle span.cm-link {
+  color: #33aa33; }
+.cm-s-idle span.cm-operator {
+  color: #ff5600; }
+.cm-s-idle span.cm-def {
+  color: #21439c; }
+.cm-s-idle span.cm-argument {
+  color: #0076ad; }
+.cm-s-idle span.cm-thisvar {
+  color: #a535ae; }
+
+svg {
+  font-size: 10px; }
+  svg .axis text {
+    fill: #aaaaaa; }
+  svg .axis path, svg .axis line {
+    fill: none;
+    stroke: #cccccc;
+    shape-rendering: crispEdges; }
+  svg .line {
+    fill: none;
+    stroke-width: 1px;
+    stroke-linecap: square; }
+  svg .deselected .line {
+    opacity: 0.2; }
+  svg .hovered .line {
+    stroke-width: 2px; }
+
+.CodeMirror-hints {
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 2px;
+  -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border: 1px solid silver;
+  background: white;
+  font-size: 90%;
+  font-family: monospace;
+  max-height: 20em;
+  overflow-y: auto; }
+
+.CodeMirror-hint {
+  margin: 0;
+  padding: 0 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  white-space: pre;
+  color: black;
+  cursor: pointer; }
+
+.CodeMirror-hint-active {
+  background: #0088ff;
+  color: white; }
+
+kbd {
+  background: #eeeeee;
+  padding: 0.1em 0.6em;
+  border: 1px solid #cccccc;
+  font-size: 0.8em;
+  background-color: #f7f7f7;
+  -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+  -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 0 0.1em;
+  text-shadow: 0 1px 0 white;
+  line-height: 1.4; }
+
+/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+}
+.CodeMirror-scroll {
+  /* Set scrolling behaviour here */
+  overflow: auto;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+}
+
+/* CURSOR */
+
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid black;
+  z-index: 3;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.CodeMirror.cm-keymap-fat-cursor div.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: #7e7;
+  z-index: 1;
+}
+/* Can style cursor different in overwrite (non-insert) mode */
+.CodeMirror div.CodeMirror-cursor.CodeMirror-overwrite {}
+
+.cm-tab { display: inline-block; }
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable {color: black;}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3 {color: #085;}
+.cm-s-default .cm-property {color: black;}
+.cm-s-default .cm-operator {color: black;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-error {color: #f00;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+
+.cm-invalidchar {color: #f00;}
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  color: black;
+}
+
+.CodeMirror-scroll {
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px; margin-right: -30px;
+  padding-bottom: 30px; padding-right: 30px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+}
+.CodeMirror-sizer {
+  position: relative;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actuall scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0; left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0; bottom: 0;
+  z-index: 6;
+}
+
+.CodeMirror-gutters {
+  position: absolute; left: 0; top: 0;
+  height: 100%;
+  padding-bottom: 30px;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  height: 100%;
+  padding-bottom: 30px;
+  margin-bottom: -32px;
+  display: inline-block;
+  /* Hack to make IE7 behave */
+  *zoom:1;
+  *display:inline;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+
+.CodeMirror-lines {
+  cursor: text;
+}
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+}
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+}
+
+.CodeMirror-widget {
+  display: inline-block;
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%; height: 0px;
+  overflow: hidden;
+  visibility: hidden;
+}
+.CodeMirror-measure pre { position: static; }
+
+.CodeMirror div.CodeMirror-cursor {
+  position: absolute;
+  visibility: hidden;
+  border-right: none;
+  width: 0;
+}
+.CodeMirror-focused div.CodeMirror-cursor {
+  visibility: visible;
+}
+
+.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+
+.cm-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, .4);
+}
+
+/* IE7 hack to prevent it from returning funny offsetTops on the spans */
+.CodeMirror span { *vertical-align: text-bottom; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursor {
+    visibility: hidden;
+  }
+}
