@@ -51113,7 +51113,7 @@ if (typeof exports === 'object') {
     imports = ['builtins', 'graphite', 'opentsdb', 'github', 'input', 'notebook', 'compat'];
     imports.push.apply(imports, settings.get('app', 'imports') || []);
     module_names.push.apply(imports, settings.get('app', 'module_names') || []);
-    settings.set('app', 'intro_command', 'intro');
+    settings["default"]('app', 'intro_command', 'intro');
     settings.set('app', 'paths', 'also', {
       site: 'github.com',
       repo: 'also/lead.js'
